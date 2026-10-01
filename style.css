@@ -1576,6 +1576,9 @@ section {
     color:
         var(--pink-dark);
 
+    font-size: clamp(35px, 5vw, 55px);
+
+
 }
 
 
@@ -1906,6 +1909,8 @@ section {
 
     transition:
         transform 0.4s ease;
+    
+   
 
 }
 
@@ -2001,7 +2006,7 @@ section {
 .project-content {
 
     padding:
-        20px 22px 0;
+        20px 15px 0;
 
 }
 
@@ -2059,6 +2064,8 @@ section {
 
     margin-bottom:
         8px;
+
+    padding: 10px;    
 
 }
 
@@ -3138,6 +3145,324 @@ body.soft-mode {
         font-size:
             43px;
 
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVE WINDOW / SCREEN SIZING
+========================================================= */
+
+/* Prevent elements from becoming wider than the screen */
+* {
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal scrolling */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN SECTIONS
+========================================================= */
+
+section {
+    width: min(1200px, 92%);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-section,
+.contact-section {
+    width: min(1200px, 92%);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.education-card {
+    width: 100%;
+    max-width: none;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-card {
+    width: 100%;
+    max-width: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.contact-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-buttons {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   LARGE LAPTOP / SMALL DESKTOP
+   1200px and below
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    section {
+        width: 90%;
+    }
+
+    .education-section,
+    .contact-section {
+        width: 90%;
+    }
+
+    .projects-grid {
+        gap: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   1000px and below
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    /* Navbar */
+
+    .navbar {
+        width: 94%;
+    }
+
+
+    /* Section spacing */
+
+    section {
+        padding: 60px 0;
+    }
+
+
+    /* Projects */
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* Contact */
+
+    .contact-card {
+        gap: 20px;
+        padding: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   800px and below
+========================================================= */
+
+@media (max-width: 800px) {
+
+    section,
+    .education-section,
+    .contact-section {
+        width: 92%;
+    }
+
+
+    /* Projects become one column */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Education */
+
+    .education-card {
+        padding: 28px;
+    }
+
+
+    /* Contact becomes vertical */
+
+    .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-content {
+        width: 100%;
+    }
+
+    .contact-buttons {
+        width: 100%;
+    }
+
+
+    /* Contact buttons */
+
+    .contact-btn {
+        flex: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   600px and below
+========================================================= */
+
+@media (max-width: 600px) {
+
+    section,
+    .education-section,
+    .contact-section {
+        width: 90%;
+    }
+
+
+    /* Smaller section spacing */
+
+    section {
+        padding: 45px 0;
+    }
+
+
+    /* Section title */
+
+    .section-header h2 {
+        font-size: clamp(35px, 10vw, 50px);
+    }
+
+
+    /* Project card */
+
+    .project-card {
+        width: 100%;
+    }
+
+    .project-preview {
+        height: 180px;
+    }
+
+
+    /* Education */
+
+    .education-card {
+        padding: 22px;
+    }
+
+
+    .education-item {
+        padding-left: 10px;
+    }
+
+
+    /* Contact */
+
+    .contact-card {
+        padding: 25px;
+    }
+
+    .contact-content h2 {
+        font-size: clamp(30px, 9vw, 42px);
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   400px and below
+========================================================= */
+
+@media (max-width: 400px) {
+
+    section,
+    .education-section,
+    .contact-section {
+        width: 94%;
+    }
+
+
+    .project-content {
+        padding: 15px;
+    }
+
+
+    .project-preview {
+        height: 150px;
+    }
+
+
+    .education-card,
+    .contact-card {
+        padding: 18px;
+    }
+
+
+    .education-item h3 {
+        font-size: 16px;
+    }
+
+
+    .education-item p {
+        font-size: 10px;
+    }
+
+
+    .contact-content p {
+        font-size: 10px;
     }
 
 }
